@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR.OOPS - CYBER MOD</title>
+    <style>
+        /* TỔNG THỂ NỀN ĐEN & TUYẾT RƠI */
+        body { 
+            background-color: #050505; 
+            color: #fff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            overflow-x: hidden;
+        }
 
+        /* Hiệu ứng tuyết rơi bằng CSS */
+        body::before {
+            content: ' ';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: snow 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes snow {
+            from { background-position: 0 0; }
+            to { background-position: 200px 500px; }
+        }
+
+        /* KHUNG CHÍNH RGB */
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            background: rgba(15, 15, 15, 0.95);
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 255, 204, 0.2);
+            z-index: 1;
+        }
+
+        /* VIỀN LED 7 MÀU */
+        .container::before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            background: conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+            border-radius: 29px;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* TIÊU ĐỀ NEON */
+        h1 {
+            font-size: 35px;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+            letter-spacing: 8px;
+            margin: 10px 0;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.8; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* CÁC NÚT BẤM */
+        .btn {
+            display: block;
+            padding: 14px;
+            margin: 10px 0;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn:hover {
+            background: #00ffcc;
+            color: #000;
+            box-shadow: 0 0 25px #00ffcc;
+            transform: translateY(-3px);
+        }
+
+        .category-title {
+            color: #ff0055;
+            font-size: 14px;
+            text-align: left;
+            margin: 25px 0 10px 10px;
+            font-weight: bold;
+            border-left: 3px solid #ff0055;
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+
+        img { width: 100%; border-radius: 15px; border: 1px solid #333; margin: 15px 0; }
+        
+        .footer-text { font-size: 10px; color: #555; margin-top: 40px; letter-spacing: 2px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p style="color: #ff0055; font-size: 12px; font-weight: bold;">[ SYSTEM STATUS: ENCRYPTED ]</p>
+        <h1>MR.OOPS</h1>
+        <p style="color: #aaa; font-size: 12px;">KHO TÀI NGUYÊN GAME LỚN NHẤT VIỆT NAM</p>
+
+        <hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, #333, transparent);">
+
+        <img src="https://via.placeholder.com/500x250.png?text=ANH+MOD+VIP+TAI+DAY" alt="Mod Banner">
+
+        <div class="category-title">Mod Skin Súng (OB53)</div>
+        <a href="#" class="btn">Link Mod Súng 1 (đang cập nhật)</a>
+        <a href="#" class="btn">Link Mod Súng 2 (đang cập nhật)</a>
+        <a href="#" class="btn">Link Mod Súng 3 (đang cập nhật)</a>
+        <a href="#" class="btn">Link Mod Súng 4 (đang cập nhật)</a>
+        <a href="#" class="btn">Link Mod Súng 5 (đang cập nhật)</a>
+
+        <div class="category-title">file mod & Headshot & định vị</div>
+        <a href="#" class="btn"> v7 mod skin ffth& ffmax (https://link4m.com/mTRta2)</a>
+        <a href="#" class="btn"> netplus v8 (https://link4m.net/TT4Nu)</a>
+        <a href="#" class="btn"> mod skin ffth (https://link4m.com/M7G9M)</a>
+        <a href="#" class="btn">Panel Cheat (đang cập nhật)</a>
+        <a href="#" class="btn">Data Headshot (đang cập nhật)</a>
+
+        <div class="category-title">Fix Lag & Tools</div>
+        <a href="#" class="btn">File Fix Lag Cực Nhẹ (đang cập nhật)</a>
+        <a href="#" class="btn">App Tăng FPS (đang cập nhật)</a>
+        <a href="#" class="btn">Giảm Ping Pro (đang cập nhật)</a>
+
+        <div class="category-title">Cộng đồng & Dự phòng</div>
+        <a href="#" class="btn" style="border-color: #ff0055; color: #ff0055;">Kênh YouTube Mr.Oops</a>
+        <a href="#" class="btn" style="border-color: #0088cc; color: #0088cc;">https://t.me/trumlof5</a>
+        <a href="#" class="btn" style="border-color: #00ffcc; color: #00ffcc;"> không có hoặc đang cập nhật</a>
+        <a href="#" class="btn" style="border-color: #00ffcc; color: #00ffcc;">không có hoặc đang cập nhật</a>
+
+        <p class="footer-text">© 2026 DESIGN BY MR.OOPS TECHNOLOGY</p>
+    </div>
+
+</body>
+</html>
+        p { color: #aaa; font-size: 0.9rem; margin-bottom: 30px; }
+
+        /* Nút bấm phong cách Cyberpunk */
+        .btn {
+            display: block;
+            position: relative;
+            padding: 15px;
+            margin: 15px 0;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            border-radius: 5px;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: #00ffcc;
+            color: #000;
+            box-shadow: 0 0 20px #00ffcc;
+            border-color: #00ffcc;
+        }
+
+        /* Icon nhấp nháy cho thêm phần nguy hiểm */
+        .status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #ff0000;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; box-shadow: 0 0 10px #ff0000; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; box-shadow: 0 0 10px #ff0000; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div style="margin-bottom: 20px;">
+            <span class="status"></span> <small style="color: #ff0000; font-weight: bold;">SYSTEM ONLINE</small>
+        </div>
+        
+        <h1>MR.OOPS</h1>
+        <p>PREMIUM MOD & SCRIPTS 2026</p>
+        
+        <hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, #333, transparent); margin-bottom: 25px;">
+        
+        <a href="#" class="btn">Tải Menu Mod Skin</a>
+        <a href="#" class="btn">Script Auto Headshot</a>
+        <a href="#" class="btn">Kênh YouTube chính chủ</a>
+        <a href="#" class="btn" style="border-color: #7a00ff;">Nhóm Telegram kín</a>
+
+        <p style="font-size: 10px; color: #444; margin-top: 30px;">ENCRYPTED BY MR.OOPS TECHNOLOGY</p>
+    </div>
+
+</body>
+  </html>
+  
