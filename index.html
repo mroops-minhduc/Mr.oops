@@ -3,37 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MR.OOPS - CYBER MOD</title>
+    <title>MR.OOPS - CYBER</title>
     <style>
-        /* TỔNG THỂ NỀN ĐEN & TUYẾT RƠI */
+        /* --- 1. TỔNG THỂ NỀN ĐEN --- */
         body { 
             background-color: #050505; 
             color: #fff; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            padding: 40px 0;
+            padding: 0;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Hiệu ứng tuyết rơi bằng CSS */
-        body::before {
-            content: ' ';
+        /* --- 2. THANH MENU ĐIỀU HƯỚNG (GIỐNG ẢNH 3) --- */
+        .navbar {
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid #222;
+            padding: 15px 0;
+            text-align: center;
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0));
-            background-repeat: repeat;
-            background-size: 200px 200px;
-            animation: snow 10s linear infinite;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00ffcc;
+        }
+
+        /* --- 3. KHUNG CHÍNH RGB (ĐÃ FIX LỖI CHE KHUẤT) --- */
+        .content-wrapper {
+            margin-top: 140px; /* Tạo khoảng trống cho thanh menu cố định */
+            width: 90%;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            padding: 40px;
+            background: #0f0f0f;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hiệu ứng viền xoay RGB (ĐÃ SỬA: Không còn che khuất nội dung) */
+        .container::before {
+            content: "";
+            position: absolute;
+            inset: -4px; /* Viền chỉ nằm bên ngoài */
+            background: conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+            border-radius: 24px;
+            z-index: -2;
+            animation: rotate-led 4s linear infinite;
+        }
+
+        /* Lớp nền đen để che phần giữa của viền xoay */
+        .container::after {
+            content: "";
+            position: absolute;
+            inset: 0px; /* Lớp nền này nằm đè lên viền RGB */
+            background: #0f0f0f;
+            border-radius: 20px;
             z-index: -1;
         }
 
-        @keyframes snow {
-            from { background-position: 0 0; }
+        @keyframes rotate-led {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- 4. CHỮ VÀ NÚT BẤM CÔNG NGHỆ --- */
+        h1 {
+            font-size: 30px;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+            letter-spacing: 5px;
+            margin: 10px 0;
+            animation: pulse-neon 1.5s infinite alternate;
+        }
+
+        @keyframes pulse-neon {
+            from { opacity: 0.8; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .btn {
+            display: block;
+            padding: 15px;
+            margin: 15px 0;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn:hover {
+            background: #00ffcc;
+            color: #000;
+            box-shadow: 0 0 25px #00ffcc;
+            transform: translateY(-2px);
+            border-color: #00ffcc;
+        }
+
+        /* --- 5. DANH MỤC VÀ TRẠNG THÁI --- */
+        .category-title {
+            color: #ff0055;
+            font-size: 14px;
+            text-align: left;
+            margin: 30px 0 10px 10px;
+            font-weight: bold;
+            border-left: 3px solid #ff0055;
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+
+        img { width: 100%; border-radius: 15px; border: 1px solid #333; margin: 15px 0; }
+        .footer-text { font-size: 10px; color: #444; margin-top: 50px; letter-spacing: 2px; }
+        .status-dot { display: inline-block; width: 10px; height: 10px; background: #ff0000; border-radius: 50%; margin-right: 8px; animation: blink 1s infinite; box-shadow: 0 0 10px #ff0000; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">Mr.Oops Mod Center</div>
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Hướng dẫn</a></li>
+            <li><a href="#">Tải về</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <p style="color: #ff0055; font-size: 12px; font-weight: bold; text-transform: uppercase;">[ System Online - Encrypted ]</p>
+            <h1>MR.OOPS</h1>
+            <p style="color: #888; font-size: 12px; margin-bottom: 30px;">KHO TÀI NGUYÊN MOD CÔNG NGHỆ CAO</p>
+
+            <hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, #222, transparent);">
+
+            <img src="https://via.placeholder.com/500x250.png?text=ANH+MOD+VIP" alt="Banner Mod">
+
+            <div class="category-title">V7 MOD SKIN & SCRIPT</div>
+            <a href="#" class="btn">Tải Menu Mod Skin</a>
+            <a href="#" class="btn">Script Auto Headshot</a>
+            <a href="#" class="btn">Link YouTube Chính Chủ</a>
+            <a href="#" class="btn" style="border-color: #7a00ff; color: #7a00ff;">Nhóm Telegram Kín</a>
+
+            <div class="category-title">Danh sách dự phòng (Đang cập nhật)</div>
+            <a href="#" class="btn">Link Dự Phòng 1 (Trống)</a>
+            <a href="#" class="btn">Link Dự Phòng 2 (Trống)</a>
+            <a href="#" class="btn">Link Dự Phòng 3 (Trống)</a>
+            
+            <p class="footer-text">© 2026 MR.OOPS TECHNOLOGY - ALL RIGHTS RESERVED</p>
+        </div>
+    </div>
+
+</body>
+</html>
             to { background-position: 200px 500px; }
         }
 
