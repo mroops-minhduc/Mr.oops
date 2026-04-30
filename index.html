@@ -1,348 +1,4 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>『Mr.Oops』👑 - CYBER MOD | SUPREME EDITION</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Space+Mono&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #050505;
-            --card: #0a0a0a;
-            --border: #1a1a1a;
-            --text-main: #ffffff;
-            --text-dim: #555555;
-            --accent: #ffffff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
-        body { background: var(--bg); color: var(--text-main); font-family: 'Rajdhani', sans-serif; overflow-x: hidden; }
-
-        /* SNOW EFFECT */
-        #snow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
-
-        /* HEADER */
-        header {
-            position: fixed; top: 0; width: 100%; height: 60px;
-            background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: center; z-index: 1000;
-        }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 14px; letter-spacing: 2px; color: var(--accent); }
-
-        /* MAIN CONTAINER */
-        .container { margin: 100px auto 50px; width: 90%; max-width: 600px; }
-        .panel { 
-            background: var(--card); border: 1px solid var(--border); 
-            padding: 40px 20px; position: relative; border-radius: 2px;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
-        }
-
-        /* TIÊU ĐỀ & MARQUEE */
-        .title-group { text-align: center; margin-bottom: 30px; }
-        .title-group h1 { font-family: 'Orbitron', sans-serif; font-size: 24px; margin-bottom: 15px; }
-        
-        .marquee-box {
-            width: 100%; overflow: hidden; border-top: 1px solid #111; border-bottom: 1px solid #111;
-            padding: 8px 0; background: rgba(255,255,255,0.01);
-        }
-        .marquee-text {
-            display: inline-block; white-space: nowrap; font-family: 'Orbitron';
-            font-size: 11px; color: var(--text-dim); letter-spacing: 5px;
-            animation: scroll 20s linear infinite;
-        }
-        @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
-
-        /* MUSIC PLAYER */
-        .music-player {
-            background: #0d0d0d; border: 1px solid #151515; padding: 15px;
-            margin-bottom: 30px; display: flex; align-items: center; gap: 15px;
-        }
-        .music-info b { font-size: 13px; color: #fff; display: block; }
-        .music-info span { font-size: 10px; color: #333; }
-        .btn-play { margin-left: auto; color: #fff; text-decoration: none; font-size: 11px; border: 1px solid #333; padding: 5px 10px; }
-
-        /* LINK SYSTEM */
-        .label { font-family: 'Orbitron'; font-size: 10px; color: #333; margin: 30px 0 15px; text-align: left; letter-spacing: 3px; }
-        .btn-item {
-            display: flex; align-items: center; background: #080808; border: 1px solid #111;
-            padding: 15px; margin-bottom: 10px; text-decoration: none; transition: 0.3s;
-        }
-        .btn-item:hover { background: #111; border-color: #333; transform: translateX(5px); }
-        .btn-meta { text-align: left; flex-grow: 1; }
-        .btn-meta b { display: block; font-size: 14px; color: #eee; margin-bottom: 2px; }
-        .btn-meta span { display: block; font-size: 9px; color: #444; font-family: 'Space Mono'; }
-        .btn-status { font-family: 'Orbitron'; font-size: 8px; color: #333; border: 1px solid #222; padding: 4px 8px; }
-        .btn-item:hover .btn-status { color: #fff; border-color: #fff; }
-
-        footer { margin-top: 40px; font-size: 9px; color: #1a1a1a; text-align: center; font-family: 'Space Mono'; }
-        
-        .msg { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; }
-        .msg svg { width: 25px; fill: #000; }
-    </style>
-</head>
-<body>
-
-    <canvas id="snow"></canvas>
-    <header><div class="logo">『Mr.Oops』👑 - CYBER MOD</div></header>
-
-    <div class="container">
-        <div class="panel">
-            <div class="title-group">
-                <h1>『Mr.Oops』👑</h1>
-                <div class="marquee-box">
-                    <div class="marquee-text">『Mr.Oops』👑 - CYBER MOD — 『Mr.Oops』👑 - CYBER MOD — 『Mr.Oops』👑 - CYBER MOD</div>
-                </div>
-            </div>
-
-            <div class="music-player">
-                <div style="font-size: 20px;">🎶</div>
-                <div class="music-info">
-                    <b>MYSTIC CHILL VIBE</b>
-                    <span>Dán link nhạc vào href của nút Play bên cạnh</span>
-                </div>
-                <a href="LINK_NHAC_CUA_BAN_TAI_DAY" class="btn-play">PLAY</a>
-            </div>
-
-            <div class="label">CORE MODULES</div>
-            <a href="https://link4m.com/mTRta2" class="btn-item">
-                <div class="btn-meta"><b>V7 MOD SKIN FFTH & MAX</b><span>VERSION: 53.0 | SIZE: 12MB | STATUS: ONLINE</span></div>
-                <div class="btn-status">DOWNLOAD</div>
-            </a>
-            <a href="https://link4m.net/TT4Nu" class="btn-item">
-                <div class="btn-meta"><b>NETPLUS V8 VIP CHEAT</b><span>VERSION: 8.2 | SIZE: 8MB | STATUS: ONLINE</span></div>
-                <div class="btn-status">DOWNLOAD</div>
-            </a>
-
-            <div class="label">DATABASE (30 SLOTS - CẬP NHẬT LIÊN TỤC)</div>
-            
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Auto Headshot Script</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Aimbot Silent V2</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Regedit Pro v14</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Lag OB53 Ultra</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Unlock 120 FPS</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Súng M1887 VIP</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Nắm Đấm Bão Lửa</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Áo Vệ Binh</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Bypass Antiban</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Full Data Skin</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Script Fly Hack</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Wallhack ESP Menu</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Magic Bullet Pro</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Fast Reload Gun</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Antena Head 100%</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Lag 2GB RAM</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Optimize FPS Pro</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Emotes VIP</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Parachute VIP</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Backup Data OB53</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Tăng Độ Nhạy iPhone</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Tăng Độ Nhạy Android</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Skin AK Rồng Xanh</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Skin MP40 Xà Vương</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Skin Scar Cá Mập</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Ping 0ms</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Lọc Bạn Bè FF</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Auto Click VIP</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Radio Game</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-            <a href="#" class="btn-item"><div class="btn-meta"><b>Data OOPS Hidden</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
-
-            <footer>© 2026 『Mr.Oops』👑 - CYBER MOD | SECURED SYSTEM</footer>
-        </div>
-    </div>
-
-    <a href="https://m.me/minh.uc.64661" class="msg">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.908 1.462 5.503 3.746 7.202V22l3.369-1.85a10.45 10.45 0 002.885.408c5.523 0 10-4.145 10-9.258S17.523 2 12 2zm1.215 12.38l-2.584-2.753-5.045 2.753 5.545-5.889 2.659 2.753 4.969-2.753-5.544 5.889z"/></svg>
-    </a>
-
-    <script>
-        const canvas = document.getElementById('snow');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-        const p = [];
-        for(let i=0; i<100; i++) p.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2+1, d: Math.random()*1});
-        function draw() {
-            ctx.clearRect(0,0,canvas.width, canvas.height);
-            ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
-            ctx.beginPath();
-            for(let i=0; i<p.length; i++) {
-                let f = p[i]; ctx.moveTo(f.x, f.y); ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
-            }
-            ctx.fill(); update();
-        }
-        function update() {
-            for(let i=0; i<p.length; i++) {
-                let f = p[i]; f.y += Math.cos(f.d) + 1 + f.r/2;
-                if(f.y > canvas.height) p[i] = {x: Math.random()*canvas.width, y: -10, r: f.r, d: f.d};
-            }
-        }
-        setInterval(draw, 33);
-    </script>
-</body>
-</html>
-
-
-        /* --- 8. AUDIO VISUALIZER (MODULE 6) --- */
-        .visualizer {
-            position: fixed;
-            bottom: 40px; left: 40px;
-            display: flex;
-            align-items: flex-end;
-            gap: 3px;
-            height: 50px;
-            z-index: 1000;
-        }
-
-        .bar {
-            width: 4px;
-            background: var(--primary);
-            animation: dance 1s ease-in-out infinite alternate;
-        }
-        @keyframes dance {
-            from { height: 5px; }
-            to { height: 40px; }
-        }
-
-        /* --- 9. MESSENGER VIP --- */
-        .msg-pro {
-            position: fixed;
-            bottom: 40px; right: 40px;
-            width: 75px; height: 75px;
-            background: linear-gradient(135deg, #0084ff, #00c6ff);
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 5000;
-            box-shadow: 0 20px 40px rgba(0, 132, 255, 0.4);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: 0.4s;
-        }
-        .msg-pro:hover { transform: scale(1.1) translateY(-10px); }
-
-    </style>
-</head>
-<body>
-
-    <canvas id="matrix-canvas"></canvas>
-    <div class="cyber-grid-v2"></div>
-    <div class="scan-line-v3"></div>
-
-    <nav class="top-nav">
-        <div class="nav-brand">『Mr.Oops』👑 - CYBER MOD</div>
-        <div class="nav-links">
-            <a href="https://www.facebook.com/minh.uc.64661">FACEBOOK</a>
-            <a href="https://t.me/trumlof5">TELEGRAM</a>
-            <a href="#">YOUTUBE</a>
-            <a href="#">SUPPORT</a>
-        </div>
-    </nav>
-
-    <div class="app-wrapper">
-        <div class="glass-panel">
-            
-            <div class="hero-section">
-                <h1 class="main-title-cyber">『Mr.Oops』👑 - <span>CYBER MOD</span></h1>
-                
-                <div class="marquee-zone">
-                    <div class="marquee-wrap">
-                        <div class="marquee-content">( KHÁNH DUY là thằng cu ĐEN nhất TG ) — ( KHÁNH DUY là thằng cu ĐEN nhất TG ) — ( KHÁNH DUY là thằng cu ĐEN nhất TG )</div>
-                        <div class="marquee-content">( KHÁNH DUY là thằng cu ĐEN nhất TG ) — ( KHÁNH DUY là thằng cu ĐEN nhất TG ) — ( KHÁNH DUY là thằng cu ĐEN nhất TG )</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="zone-header">ZONE ALPHA: PREMIMUM MODULES</div>
-            <div class="download-grid">
-                <a href="https://link4m.com/mTRta2" class="btn-cyber-elite">
-                    <div class="btn-num">01</div>
-                    <div class="btn-meta">
-                        <b>V7 MOD SKIN FFTH & MAX</b>
-                        <span>SECURITY: HIGH | ENCRYPTION: ACTIVE | OB53</span>
-                    </div>
-                    <div class="btn-action">GET ACCESS</div>
-                </a>
-                <a href="https://link4m.net/TT4Nu" class="btn-cyber-elite">
-                    <div class="btn-num">02</div>
-                    <div class="btn-meta">
-                        <b>NETPLUS V8 VIP CHEAT</b>
-                        <span>SECURITY: BYPASS | ENCRYPTION: ACTIVE | VIP</span>
-                    </div>
-                    <div class="btn-action">GET ACCESS</div>
-                </a>
-            </div>
-
-            <div class="zone-header">ZONE BETA: DATABASE STORAGE (30 SLOTS)</div>
-            <div class="download-grid" id="main-db">
-                </div>
-
-            <footer style="margin-top: 80px; border-top: 1px solid #111; padding-top: 30px; text-align: left; opacity: 0.3;">
-                <p style="font-family: var(--font-mono); font-size: 10px;">
-                    © 2026 『Mr.Oops』👑 - CYBER MOD TECHNOLOGY<br>
-                    ALL RIGHTS RESERVED. ENCRYPTED BY SUPREME TERMINAL.<br>
-                    SERVER: ASIA-SOUTH-01 | LATENCY: 24ms
-                </p>
-            </footer>
-        </div>
-    </div>
-
-    <div class="visualizer">
-        <div class="bar" style="animation-delay: 0.1s"></div>
-        <div class="bar" style="animation-delay: 0.3s"></div>
-        <div class="bar" style="animation-delay: 0.5s"></div>
-        <div class="bar" style="animation-delay: 0.2s"></div>
-        <div class="bar" style="animation-delay: 0.4s"></div>
-        <div class="bar" style="animation-delay: 0.6s"></div>
-    </div>
-
-    <div class="status-bar">
-        <span>STATUS: SYSTEM ONLINE</span>
-        <span id="digital-clock">00:00:00 AM</span>
-        <span>LATENCY: 12ms</span>
-    </div>
-
-    <a href="https://m.me/minh.uc.64661" class="msg-pro">
-        <svg width="40" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.908 1.462 5.503 3.746 7.202V22l3.369-1.85a10.45 10.45 0 002.885.408c5.523 0 10-4.145 10-9.258S17.523 2 12 2zm1.215 12.38l-2.584-2.753-5.045 2.753 5.545-5.889 2.659 2.753 4.969-2.753-5.544 5.889z"/></svg>
-    </a>
-
-    <script>
-        // 1. HIỆU ỨNG MATRIX RAIN
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789『Mr.Oops』";
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = [];
-        for (let i = 0; i < columns; i++) drops[i] = 1;
-
-        function drawMatrix() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#00f2ff";
-            ctx.font = fontSize + "px Fira Code";
-            for (let i = 0; i < drops.length; i++) {
-                const text = letters.charAt(Math.floor(Math.random() * letters.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-                drops[i]++;
-            }
-        }
-        setInterval(drawMatrix, 50);
-
-        // 2. ĐỒNG HỒ ĐIỆN TỬ
-        setInterval(() => {
-            const now = new Date();
-            document.getElementById('digital-clock').innerText = now.toLocaleTimeString();
-        }, 1000);
-
-        // 3. RENDER 30 LINK DỮ LIỆU
-        const dbContainer = document.getElementById('main-db');
-        const items = [
-            "Auto Headshot VIP", "Aimbot Silent", "Regedit Pro v15", "Fix Lag OB53",
-            "120 FPS Unlocker", "Skin Súng M1887", "Skin Nắm Đấm VIP", "Skin Áo Vệ Binh",
-            "Bypass Antiban", "Full Skin Data", "Script Bay Nhảy", "Wallhack Menu",
+l Skin Data", "Script Bay Nhảy", "Wallhack Menu",
             "Magic Bullet", "Fast Reload", "Antena Head", "Tăng FPS Mobile",
             "Mod Hành Động", "Skin Dù VIP", "Optimize RAM", "Data VIP 1",
             "Data VIP 2", "Data VIP 3", "Data VIP 4", "Data VIP 5", "Data VIP 6",
@@ -575,3 +231,184 @@ tn-name">File Dự Phòng 04</span> <span class="btn-status">OFFLINE</span></a>
 </body>
                                                                                                                         </html>
                                                                              
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>『Mr.Oops』👑 - CYBER MOD | DEEP CYAN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #030508; 
+            --card: rgba(10, 15, 25, 0.98);
+            --border: #1a2a3a;
+            --accent: #00f2ff; 
+            --text: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; overflow-x: hidden; }
+
+        #snow-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+
+        header {
+            position: fixed; top: 0; width: 100%; height: 60px;
+            background: rgba(0,0,0,0.8); border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center; z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 14px; letter-spacing: 2px; color: var(--accent); }
+
+        .container { margin: 100px auto 50px; width: 92%; max-width: 500px; }
+        
+        .panel { 
+            background: var(--card); border: 1px solid var(--border); 
+            padding: 35px 20px; border-radius: 15px;
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.05);
+            text-align: center;
+        }
+
+        .main-title { font-family: 'Orbitron', sans-serif; font-size: 22px; margin-bottom: 15px; color: #fff; }
+
+        .marquee-box {
+            width: 100%; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            padding: 10px 0; background: rgba(0, 242, 255, 0.02); margin-bottom: 30px;
+        }
+        .marquee-text {
+            display: inline-block; white-space: nowrap; font-family: 'Orbitron';
+            font-size: 11px; color: var(--accent); letter-spacing: 3px;
+            animation: scroll 15s linear infinite;
+        }
+        @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+
+        .label { font-family: 'Orbitron'; font-size: 10px; color: var(--accent); margin: 25px 0 15px; text-align: left; opacity: 0.6; letter-spacing: 2px; }
+        
+        .btn-list { display: flex; flex-direction: column; gap: 12px; }
+        
+        .btn-item {
+            display: flex; align-items: center; background: rgba(255,255,255,0.03); 
+            border: 1px solid var(--border); padding: 16px; text-decoration: none; 
+            transition: 0.3s; border-radius: 8px;
+        }
+        .btn-item:hover { background: rgba(0, 242, 255, 0.05); border-color: var(--accent); transform: scale(1.02); }
+        
+        .btn-meta { text-align: left; flex-grow: 1; }
+        .btn-meta b { display: block; font-size: 14px; color: #eee; margin-bottom: 3px; }
+        .btn-meta span { display: block; font-size: 9px; color: #555; }
+        
+        .btn-status { font-family: 'Orbitron'; font-size: 8px; color: var(--accent); border: 1px solid var(--border); padding: 5px 10px; border-radius: 4px; }
+
+        footer { margin-top: 40px; font-size: 10px; color: #333; letter-spacing: 1px; }
+
+        .float-fb {
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            z-index: 1000;
+        }
+        .float-fb svg { width: 28px; fill: white; }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" autoplay loop>
+        <source src="https://rr4---sn-8qj-i5ol7.googlevideo.com/videoplayback?expire=1777613809&ei=kefzabiWDtW_sfIP3_-ogQg&ip=142.129.52.155&id=o-ADE7OP6oWVJ0yTzr10BQfLYNvMQ0FiHWGL9fU9E2GTAm&itag=140&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ==&rms=au,au&bui=AbKmrwpfJCbs6PZteF5opR3wfbM4M-ORYsSiH4Z8IC7P_1HMY4lQJZjYa5-9X518gQByT52_qRmZFf6g&spc=96Xrv2g7amWdKrZU3-wujHPkpjWmA4oJ9H_uEW5tpGx6&vprv=1&svpuc=1&mime=audio/mp4&rqh=1&gir=yes&clen=1244748&dur=76.858&lmt=1754723508989415&keepalive=yes&fexp=51565116,51565682&c=ANDROID_VR&txp=5532534&sparams=expire,ei,ip,id,itag,source,requiressl,xpc,bui,spc,vprv,svpuc,mime,rqh,gir,clen,dur,lmt&sig=AHEqNM4wRQIgVYQMbMBIjKJ7p30EEMDiWu-uvN6Hqqqw0SVwQTDH7MoCIQChUxuLbIZnQthMPo0i9z9Kbb327Zb7CFgxDBLkfOxdnw==&redirect_counter=1&rm=sn-a5meed7l&rrc=104&req_id=6c85721bc8a0a3ee&cms_redirect=yes&cmsv=e&cps=158&ipbypass=yes&met=1777592239,&mh=f8&mip=123.26.189.78&mm=31&mn=sn-8qj-i5ol7&ms=au&mt=1777591954&mv=u&mvi=4&pl=22&lsparams=cps,ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRgIhAIcw1fKy-4h0orw_gwnKFlRIj9QqIzKlIdkdb_anfL-1AiEA8IG8HRkdTBGZHiKTcYywXzxtK9C4vzCE3mDeaB6pFqw%3D" type="audio/mp4">
+    </audio>
+
+    <canvas id="snow-canvas"></canvas>
+    <header><div class="logo">『Mr.Oops』👑 - CYBER MOD</div></header>
+
+    <div class="container">
+        <div class="panel">
+            <h1 class="main-title">『Mr.Oops』👑</h1>
+            
+            <div class="marquee-box">
+                <div class="marquee-text">『Mr.Oops』👑 - CYBER MOD — SECURED BY SUPREME TECHNOLOGY — UPDATE DAILY</div>
+            </div>
+
+            <div class="label">PRIMARY MODULES</div>
+            <div class="btn-list">
+                <a href="https://link4m.com/mTRta2" class="btn-item">
+                    <div class="btn-meta"><b>V7 MOD SKIN FFTH & MAX</b><span>LATEST UPDATE | STATUS: ONLINE</span></div>
+                    <div class="btn-status">GET</div>
+                </a>
+                <a href="https://link4m.net/TT4Nu" class="btn-item">
+                    <div class="btn-meta"><b>NETPLUS V8 VIP CHEAT</b><span>ANTI-BAN ACTIVATED | VIP</span></div>
+                    <div class="btn-status">GET</div>
+                </a>
+            </div>
+
+            <div class="label">DATABASE STORAGE (30 SLOTS)</div>
+            <div class="btn-list">
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Auto Headshot</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Aimbot Silent</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Regedit Pro</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Lag OB53</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Unlock 120 FPS</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Súng VIP</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Nắm Đấm</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Áo Vệ Binh</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Bypass Pro</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Full Data Skin</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Fly Hack</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Wallhack ESP</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Magic Bullet</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Fast Reload</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Antena Head</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Lag 2GB</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Optimize FPS</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Emotes</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Parachute</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Backup Data</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Sensitivity iPhone</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Sensitivity Android</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Mod AK Rồng</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Mod MP40 Xà Vương</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Scar Cá Mập</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Ping</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Lọc Bạn Bè</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Auto Click</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Radio</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+                <a href="#" class="btn-item"><div class="btn-meta"><b>OOPS Hidden</b><span>ĐANG CẬP NHẬT LINK...</span></div><div class="btn-status">WAIT</div></a>
+            </div>
+
+            <footer>© 2026 『Mr.Oops』👑 - CYBER MOD</footer>
+        </div>
+    </div>
+
+    <a href="https://m.me/minh.uc.64661" class="float-fb">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.908 1.462 5.503 3.746 7.202V22l3.369-1.85a10.45 10.45 0 002.885.408c5.523 0 10-4.145 10-9.258S17.523 2 12 2zm1.215 12.38l-2.584-2.753-5.045 2.753 5.545-5.889 2.659 2.753 4.969-2.753-5.544 5.889z"/></svg>
+    </a>
+
+    <script>
+        const canvas = document.getElementById('snow-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const p = [];
+        for(let i=0; i<80; i++) p.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2+1, d: Math.random()*1});
+        function draw() {
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            ctx.fillStyle = "rgba(0, 242, 255, 0.3)";
+            ctx.beginPath();
+            for(let i=0; i<p.length; i++) {
+                let f = p[i]; ctx.moveTo(f.x, f.y); ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
+            }
+            ctx.fill(); update();
+        }
+        function update() {
+            for(let i=0; i<p.length; i++) {
+                let f = p[i]; f.y += Math.cos(f.d) + 1 + f.r/2;
+                if(f.y > canvas.height) p[i] = {x: Math.random()*canvas.width, y: -10, r: f.r, d: f.d};
+            }
+        }
+        setInterval(draw, 33);
+
+        const music = document.getElementById('bg-music');
+        const playMusic = () => { music.play(); };
+        document.body.addEventListener('click', playMusic, {once: true});
+        document.body.addEventListener('touchstart', playMusic, {once: true});
+    </script>
+</body>
+</html>
