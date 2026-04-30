@@ -3,322 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>『Mr.Oops』👑 - CYBER MOD </title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>『Mr.Oops』👑 - CYBER MOD | SUPREME EDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Space+Mono&display=swap" rel="stylesheet">
     
     <style>
-        /* PROJECT: 『Mr.Oops』👑 - CYBER MOD
-           VERSION: 10.0 ULTRA SUPREME
-           CODER: GEMINI AI COLLABORATION
-           STATUS: UNBEATABLE
-        */
-
         :root {
-            --primary: #00f2ff;
-            --primary-glow: rgba(0, 242, 255, 0.5);
-            --secondary: #ff0055;
-            --secondary-glow: rgba(255, 0, 85, 0.5);
-            --accent: #00ff66;
-            --bg-deep: #000000;
-            --card-bg: rgba(6, 6, 6, 0.95);
-            --font-main: 'Rajdhani', sans-serif;
-            --font-cyber: 'Orbitron', sans-serif;
-            --font-mono: 'Fira Code', monospace;
+            --bg: #050505;
+            --card: #0a0a0a;
+            --border: #1a1a1a;
+            --text-main: #ffffff;
+            --text-dim: #555555;
+            --accent: #ffffff;
         }
 
-        /* --- 1. RESET & CẤU TRÌNH HỆ THỐNG --- */
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: var(--primary); box-shadow: 0 0 10px var(--primary); }
+        body { background: var(--bg); color: var(--text-main); font-family: 'Rajdhani', sans-serif; overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg-deep);
-            color: #ffffff;
-            font-family: var(--font-main);
-            overflow-x: hidden;
-            min-height: 200vh; /* Tạo độ dài cho web */
+        /* SNOW EFFECT */
+        #snow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; height: 60px;
+            background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center; z-index: 1000;
+        }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 14px; letter-spacing: 2px; color: var(--accent); }
+
+        /* MAIN CONTAINER */
+        .container { margin: 100px auto 50px; width: 90%; max-width: 600px; }
+        .panel { 
+            background: var(--card); border: 1px solid var(--border); 
+            padding: 40px 20px; position: relative; border-radius: 2px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
         }
 
-        /* --- 2. HIỆU ỨNG NỀN MATRIX & GRID (MODULE 1) --- */
-        #matrix-canvas {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -3;
-            opacity: 0.15;
-        }
-
-        .cyber-grid-v2 {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -2;
-            perspective: 1000px;
-            transform-style: preserve-3d;
-            animation: gridRotation 30s linear infinite;
-        }
-
-        @keyframes gridRotation {
-            0% { transform: translateY(0) rotateX(0deg); }
-            100% { transform: translateY(50px) rotateX(0deg); }
-        }
-
-        .scan-line-v3 {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.05) 50%, transparent);
-            background-size: 100% 8px;
-            z-index: 1000;
-            pointer-events: none;
-            animation: scanMove 4s linear infinite;
-        }
-
-        @keyframes scanMove { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
-
-        /* --- 3. HEADER NAVIGATION (MODULE 2) --- */
-        .top-nav {
-            position: fixed;
-            top: 0; width: 100%;
-            height: 80px;
-            background: rgba(0, 0, 0, 0.95);
-            border-bottom: 2px solid var(--primary);
-            display: flex;
-            align-items: center;
-            padding: 0 50px;
-            z-index: 2000;
-            backdrop-filter: blur(20px);
-        }
-
-        .nav-brand {
-            font-family: var(--font-cyber);
-            font-size: 20px;
-            font-weight: 900;
-            color: var(--primary);
-            text-shadow: 0 0 15px var(--primary-glow);
-        }
-
-        .nav-links {
-            margin-left: auto;
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #666;
-            font-family: var(--font-cyber);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            transition: 0.4s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px; left: 0; width: 0; height: 2px;
-            background: var(--primary);
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
-        .nav-links a:hover::after { width: 100%; }
-
-        /* --- 4. TRÌNH TRẠNG THÁI (MODULE 3) --- */
-        .status-bar {
-            position: fixed;
-            bottom: 0; width: 100%;
-            background: #000;
-            border-top: 1px solid #222;
-            padding: 5px 20px;
-            display: flex;
-            justify-content: space-between;
-            font-family: var(--font-mono);
-            font-size: 10px;
-            color: #444;
-            z-index: 2000;
-        }
-
-        /* --- 5. MAIN INTERFACE BOX (MODULE 4) --- */
-        .app-wrapper {
-            margin: 150px auto 100px;
-            width: 95%;
-            max-width: 750px;
-            position: relative;
-        }
-
-        .glass-panel {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 242, 255, 0.1);
-            padding: 60px 40px;
-            border-radius: 4px;
-            box-shadow: 0 50px 100px rgba(0,0,0,1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Viền Neon Xoay Siêu Cấp */
-        .glass-panel::before {
-            content: '';
-            position: absolute;
-            inset: -5px;
-            background: conic-gradient(from 0deg, transparent, var(--primary), var(--secondary), var(--accent), transparent);
-            z-index: -1;
-            animation: rotateRGB 6s linear infinite;
-        }
-
-        .glass-panel::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            background: #050505;
-            z-index: -1;
-        }
-
-        @keyframes rotateRGB { to { transform: rotate(360deg); } }
-
-        /* --- 6. TIÊU ĐỀ & CHỮ CHẠY (YÊU CẦU RIÊNG) --- */
-        .hero-section { text-align: center; margin-bottom: 60px; }
+        /* TIÊU ĐỀ & MARQUEE */
+        .title-group { text-align: center; margin-bottom: 30px; }
+        .title-group h1 { font-family: 'Orbitron', sans-serif; font-size: 24px; margin-bottom: 15px; }
         
-        .main-title-cyber {
-            font-family: var(--font-cyber);
-            font-size: 42px;
-            font-weight: 900;
-            color: #fff;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            position: relative;
-            display: inline-block;
+        .marquee-box {
+            width: 100%; overflow: hidden; border-top: 1px solid #111; border-bottom: 1px solid #111;
+            padding: 8px 0; background: rgba(255,255,255,0.01);
         }
-
-        .main-title-cyber span { color: var(--primary); text-shadow: 0 0 20px var(--primary-glow); }
-
-        /* DÒNG CHỮ KHÁNH DUY CHẠY LIÊN TỤC */
-        .marquee-zone {
-            width: 100%;
-            background: rgba(255, 0, 85, 0.15);
-            border: 1px solid var(--secondary);
-            margin-top: 15px;
-            padding: 8px 0;
-            overflow: hidden;
-            position: relative;
+        .marquee-text {
+            display: inline-block; white-space: nowrap; font-family: 'Orbitron';
+            font-size: 11px; color: var(--text-dim); letter-spacing: 5px;
+            animation: scroll 20s linear infinite;
         }
+        @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
 
-        .marquee-wrap {
-            display: flex;
-            width: 200%;
-            animation: marqueeFlow 15s linear infinite;
+        /* MUSIC PLAYER */
+        .music-player {
+            background: #0d0d0d; border: 1px solid #151515; padding: 15px;
+            margin-bottom: 30px; display: flex; align-items: center; gap: 15px;
         }
+        .music-info b { font-size: 13px; color: #fff; display: block; }
+        .music-info span { font-size: 10px; color: #333; }
+        .btn-play { margin-left: auto; color: #fff; text-decoration: none; font-size: 11px; border: 1px solid #333; padding: 5px 10px; }
 
-        .marquee-content {
-            flex-shrink: 0;
-            width: 50%;
-            font-weight: 900;
-            color: var(--secondary);
-            font-size: 16px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-align: center;
+        /* LINK SYSTEM */
+        .label { font-family: 'Orbitron'; font-size: 10px; color: #333; margin: 30px 0 15px; text-align: left; letter-spacing: 3px; }
+        .btn-item {
+            display: flex; align-items: center; background: #080808; border: 1px solid #111;
+            padding: 15px; margin-bottom: 10px; text-decoration: none; transition: 0.3s;
         }
-
-        @keyframes marqueeFlow {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* --- 7. HỆ THỐNG NÚT BẤM SUPREME (MODULE 5) --- */
-        .zone-header {
-            text-align: left;
-            margin: 50px 0 20px;
-            font-family: var(--font-cyber);
-            font-size: 12px;
-            color: var(--accent);
-            border-left: 4px solid var(--accent);
-            padding-left: 15px;
-            letter-spacing: 3px;
-        }
-
-        .download-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .btn-cyber-elite {
-            display: flex;
-            align-items: center;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid #1a1a1a;
-            padding: 25px;
-            text-decoration: none;
-            transition: 0.5s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-cyber-elite::before {
-            content: '';
-            position: absolute;
-            left: -100%; top: 0; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.1), transparent);
-            transition: 0.5s;
-        }
-
-        .btn-cyber-elite:hover {
-            border-color: var(--primary);
-            background: #080808;
-            transform: translateX(10px) scale(1.02);
-            box-shadow: -15px 0 30px rgba(0, 242, 255, 0.1);
-        }
-
-        .btn-cyber-elite:hover::before { left: 100%; }
-
-        .btn-num {
-            font-family: var(--font-mono);
-            font-size: 24px;
-            font-weight: 900;
-            color: #222;
-            margin-right: 25px;
-        }
-
-        .btn-cyber-elite:hover .btn-num { color: var(--primary); }
-
+        .btn-item:hover { background: #111; border-color: #333; transform: translateX(5px); }
         .btn-meta { text-align: left; flex-grow: 1; }
-        .btn-meta b {
-            display: block;
-            font-family: var(--font-cyber);
-            font-size: 16px;
-            color: #fff;
-            margin-bottom: 5px;
-        }
-        .btn-meta span {
-            font-family: var(--font-mono);
-            font-size: 10px;
-            color: #444;
-            text-transform: uppercase;
-        }
+        .btn-meta b { display: block; font-size: 14px; color: #eee; margin-bottom: 2px; }
+        .btn-meta span { display: block; font-size: 9px; color: #444; font-family: 'Space Mono'; }
+        .btn-status { font-family: 'Orbitron'; font-size: 8px; color: #333; border: 1px solid #222; padding: 4px 8px; }
+        .btn-item:hover .btn-status { color: #fff; border-color: #fff; }
 
-        .btn-action {
-            font-family: var(--font-cyber);
-            font-size: 10px;
-            font-weight: 900;
-            color: #fff;
-            border: 1px solid #333;
-            padding: 8px 15px;
-            background: #111;
-        }
+        footer { margin-top: 40px; font-size: 9px; color: #1a1a1a; text-align: center; font-family: 'Space Mono'; }
+        
+        .msg { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .msg svg { width: 25px; fill: #000; }
+    </style>
+</head>
+<body>
 
-        .btn-cyber-elite:hover .btn-action {
-            background: var(--primary);
-            color: #000;
-            border-color: var(--primary);
-            box-shadow: 0 0 15px var(--primary);
+    <canvas id="snow"></canvas>
+    <header><div class="logo">『Mr.Oops』👑 - CYBER MOD</div></header>
+
+    <div class="container">
+        <div class="panel">
+            <div class="title-group">
+                <h1>『Mr.Oops』👑</h1>
+                <div class="marquee-box">
+                    <div class="marquee-text">『Mr.Oops』👑 - CYBER MOD — 『Mr.Oops』👑 - CYBER MOD — 『Mr.Oops』👑 - CYBER MOD</div>
+                </div>
+            </div>
+
+            <div class="music-player">
+                <div style="font-size: 20px;">🎶</div>
+                <div class="music-info">
+                    <b>MYSTIC CHILL VIBE</b>
+                    <span>Dán link nhạc vào href của nút Play bên cạnh</span>
+                </div>
+                <a href="LINK_NHAC_CUA_BAN_TAI_DAY" class="btn-play">PLAY</a>
+            </div>
+
+            <div class="label">CORE MODULES</div>
+            <a href="https://link4m.com/mTRta2" class="btn-item">
+                <div class="btn-meta"><b>V7 MOD SKIN FFTH & MAX</b><span>VERSION: 53.0 | SIZE: 12MB | STATUS: ONLINE</span></div>
+                <div class="btn-status">DOWNLOAD</div>
+            </a>
+            <a href="https://link4m.net/TT4Nu" class="btn-item">
+                <div class="btn-meta"><b>NETPLUS V8 VIP CHEAT</b><span>VERSION: 8.2 | SIZE: 8MB | STATUS: ONLINE</span></div>
+                <div class="btn-status">DOWNLOAD</div>
+            </a>
+
+            <div class="label">DATABASE (30 SLOTS - CẬP NHẬT LIÊN TỤC)</div>
+            
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Auto Headshot Script</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Aimbot Silent V2</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Regedit Pro v14</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Lag OB53 Ultra</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Unlock 120 FPS</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Súng M1887 VIP</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Nắm Đấm Bão Lửa</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Áo Vệ Binh</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Bypass Antiban</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Full Data Skin</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Script Fly Hack</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Wallhack ESP Menu</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Magic Bullet Pro</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Fast Reload Gun</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Antena Head 100%</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Lag 2GB RAM</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Optimize FPS Pro</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Emotes VIP</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Skin Parachute VIP</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Backup Data OB53</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Tăng Độ Nhạy iPhone</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Tăng Độ Nhạy Android</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Skin AK Rồng Xanh</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Skin MP40 Xà Vương</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Skin Scar Cá Mập</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Fix Ping 0ms</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Lọc Bạn Bè FF</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Auto Click VIP</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Mod Radio Game</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+            <a href="#" class="btn-item"><div class="btn-meta"><b>Data OOPS Hidden</b><span>STATUS: ĐANG CẬP NHẬT...</span></div><div class="btn-status">WAITING</div></a>
+
+            <footer>© 2026 『Mr.Oops』👑 - CYBER MOD | SECURED SYSTEM</footer>
+        </div>
+    </div>
+
+    <a href="https://m.me/minh.uc.64661" class="msg">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.908 1.462 5.503 3.746 7.202V22l3.369-1.85a10.45 10.45 0 002.885.408c5.523 0 10-4.145 10-9.258S17.523 2 12 2zm1.215 12.38l-2.584-2.753-5.045 2.753 5.545-5.889 2.659 2.753 4.969-2.753-5.544 5.889z"/></svg>
+    </a>
+
+    <script>
+        const canvas = document.getElementById('snow');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const p = [];
+        for(let i=0; i<100; i++) p.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2+1, d: Math.random()*1});
+        function draw() {
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+            ctx.beginPath();
+            for(let i=0; i<p.length; i++) {
+                let f = p[i]; ctx.moveTo(f.x, f.y); ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
+            }
+            ctx.fill(); update();
         }
+        function update() {
+            for(let i=0; i<p.length; i++) {
+                let f = p[i]; f.y += Math.cos(f.d) + 1 + f.r/2;
+                if(f.y > canvas.height) p[i] = {x: Math.random()*canvas.width, y: -10, r: f.r, d: f.d};
+            }
+        }
+        setInterval(draw, 33);
+    </script>
+</body>
+</html>
+
 
         /* --- 8. AUDIO VISUALIZER (MODULE 6) --- */
         .visualizer {
